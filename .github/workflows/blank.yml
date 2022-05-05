@@ -35,12 +35,12 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-      - name: Publish beta
+      - name: Publish devel
         uses: "marvinpinto/action-automatic-releases@latest"
         if: ${{ github.ref != 'refs/heads/main' }}
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "beta"
-          prerelease: false
+          automatic_release_tag: "devel"
+          prerelease: true
           files: |
             README.md
