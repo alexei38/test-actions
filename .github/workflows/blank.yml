@@ -40,7 +40,6 @@ jobs:
         if: ${{ github.ref != 'refs/heads/main' }}
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "devel"
           prerelease: true
           files: |
             README.md
