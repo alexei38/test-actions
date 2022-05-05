@@ -35,9 +35,12 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-      - name: archive artifacts
-        uses: actions/upload-artifact@v3
+      - name: Publish beta
+        uses: "marvinpinto/action-automatic-releases@latest"
+        if: ${{ github.ref != 'refs/heads/main' }}
         with:
-          name: dist-without-markdown
-          path: |
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "beta"
+          prerelease: false
+          files: |
             README.md
