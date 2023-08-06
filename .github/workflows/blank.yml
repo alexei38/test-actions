@@ -31,13 +31,9 @@ jobs:
 
       - name: secrets
         env:
-          ENV_DATA: ${{ secrets.ENV_FILE }}
-          ENV_DATA2: ${{ secrets.ENV_COMPOSER }}
+          ENV_FILE: ${{ secrets.ENV_FILE }}
         run: |
-          echo "${ENV_DATA}"
-          echo "${ENV_DATA2}"
-          echo "${ENV_DATA}" > .env
-          echo "${ENV_DATA2}" > .env2
+          echo "${ENV_FILE}"
+          echo "${ENV_FILE}" > .env
           cat .env
-          cat .env2
           echo "OK"
