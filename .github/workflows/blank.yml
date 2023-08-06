@@ -30,7 +30,10 @@ jobs:
         run: env
 
       - name: secrets
+        env:
+          ENV_FILE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
         run: |
-          echo "${{ secrets.ENV_FILE }}"
-          echo "${{ secrets.ENV_FILE }}" > .env
+          echo "$ENV_FILE"
+          echo "$ENV_FILE" > .env
           cat .env
+          
