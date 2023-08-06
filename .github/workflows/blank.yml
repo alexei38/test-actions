@@ -34,7 +34,9 @@ jobs:
 
       - name: secrets
         run: |
-          echo "${ENV_FILE}"
-          echo "${ENV_FILE}" > .env
-          cat .env
-          echo "OK"
+          echo "$ALLMYSECRETS"
+          echo "$ALLMYVARS"
+        shell: bash
+        env:
+          ALLMYSECRETS: ${{ toJSON(secrets) }}
+          ALLMYVARS: ${{ toJSON(vars) }}
