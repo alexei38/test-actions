@@ -37,3 +37,9 @@ jobs:
         run: |
           echo "$KEY_FILE"
         shell: bash
+
+      - uses: cschleiden/replace-tokens@v1
+        with:
+          tokenPrefix: '__'
+          tokenSuffix: '__'
+          files: '[".env.prod", "environment"]'
