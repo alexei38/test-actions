@@ -8,6 +8,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  ENV_FILE: ${{ secrets.ENV_FILE }}
+
 jobs:
   build:
     runs-on: self-hosted
@@ -30,8 +33,6 @@ jobs:
         run: env
 
       - name: secrets
-        env:
-          ENV_FILE: ${{ secrets.ENV_FILE }}
         run: |
           echo "${ENV_FILE}"
           echo "${ENV_FILE}" > .env
