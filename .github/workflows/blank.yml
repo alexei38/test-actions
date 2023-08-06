@@ -31,6 +31,6 @@ jobs:
 
       - name: secrets
         run: |
-          echo "${secrets.ENV_FILE}"
-          echo "${secrets.ENV_FILE}" > .env
+          echo "${{ secrets.ENV_FILE }}"
+          echo "${{ secrets.ENV_FILE }}" > .env
           cat .env
