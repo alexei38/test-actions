@@ -6,7 +6,6 @@
         var: vars
 
     - name: docker ps -a
-      become: True
       shell:
         "docker container ls -a"
       register: container_info
