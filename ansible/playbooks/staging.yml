@@ -1,0 +1,5 @@
+- name: Deploy staging
+  hosts: localhost
+  tasks:
+    - debug:
+        var: hostvars
