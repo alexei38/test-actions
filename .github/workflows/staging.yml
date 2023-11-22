@@ -1,4 +1,4 @@
-name: Deploy on tags
+name: Deploy on staging
 
 # Controls when the workflow will run
 on:
