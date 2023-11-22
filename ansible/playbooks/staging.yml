@@ -7,3 +7,13 @@
         var: hostvars
     - debug:
         var: vars
+
+    - name: docker ps -a
+      become: True
+      shell:
+        "docker container ls -a"
+      register: container_info
+
+    - name: docker ps -a result
+      debug:
+        msg: "{{container_info.stdout_lines}}"
