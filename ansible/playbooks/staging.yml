@@ -2,9 +2,6 @@
   hosts: localhost
   gather_facts: true
   tasks:
-    - setup:
-    - debug:
-        var: hostvars
     - debug:
         var: vars
 
