@@ -5,11 +5,9 @@
     - debug:
         var: vars
 
-    - name: docker ps -a
-      shell:
-        "docker container ls -a"
-      register: container_info
-
-    - name: docker ps -a result
-      debug:
-        msg: "{{container_info.stdout_lines}}"
+    - name: Container present
+      community.docker.docker_container:
+        name: mycontainer
+        state: present
+        image: ubuntu:14.04
+        command: sleep infinity
